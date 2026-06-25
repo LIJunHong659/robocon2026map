@@ -14,14 +14,14 @@
     "display_modes": {
       "mode_red": {
         "origin_offset": {
-          "x": 0,
-          "y": 0
+          "x": 50,
+          "y": 50
         }
       },
       "mode_blue": {
         "origin_offset": {
-          "x": 0,
-          "y": 50
+          "x": 50,
+          "y": 100
         }
       }
     },
@@ -30,7 +30,7 @@
       "x_positive": "toward the negative direction of the current Y axis",
       "y_positive": "toward the positive direction of the current X axis"
     },
-    "notes": "Based on the official ROBOCON 2026 CN atlas appendix pages 1-5. This file is a 2D top-view simplification of the official footprints. The base displayed coordinate origin is the current world point (6000, 12100). Display X points toward the negative direction of the current world Y axis, and display Y points toward the positive direction of the current world X axis. mode_red keeps this origin, and mode_blue moves the origin 50 mm along display Y positive. The 2025-09 atlas pages available in the workspace were cross-checked against the official robocon.org.cn notice published on 2026-01-07."
+    "notes": "Based on the official ROBOCON 2026 CN atlas appendix pages 1-5. This file is a 2D top-view simplification of the official footprints. The base displayed coordinate origin is the current world point (6000, 12100). Display X points toward the negative direction of the current world Y axis, and display Y points toward the positive direction of the current world X axis. mode_red uses the base display coordinate offset (50, 50), and mode_blue uses the base display coordinate offset (50, 100). The 2025-09 atlas pages available in the workspace were cross-checked against the official robocon.org.cn notice published on 2026-01-07."
   },
   "sources": [
     {
