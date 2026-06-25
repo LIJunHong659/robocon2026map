@@ -1,0 +1,601 @@
+{
+  "map": {
+    "id": "robocon_2026_cn_official_field",
+    "name": "ROBOCON 2026 CN Official Field",
+    "unit": "mm",
+    "origin": {
+      "x": 6000,
+      "y": 12100
+    },
+    "axis_basis": {
+      "x": [0, -1],
+      "y": [1, 0]
+    },
+    "display_modes": {
+      "mode_red": {
+        "origin_offset": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "mode_blue": {
+        "origin_offset": {
+          "x": 0,
+          "y": 50
+        }
+      }
+    },
+    "default_mode": "mode_red",
+    "axes": {
+      "x_positive": "toward the negative direction of the current Y axis",
+      "y_positive": "toward the positive direction of the current X axis"
+    },
+    "notes": "Based on the official ROBOCON 2026 CN atlas appendix pages 1-5. This file is a 2D top-view simplification of the official footprints. The base displayed coordinate origin is the current world point (6000, 12100). Display X points toward the negative direction of the current world Y axis, and display Y points toward the positive direction of the current world X axis. mode_red keeps this origin, and mode_blue moves the origin 50 mm along display Y positive. The 2025-09 atlas pages available in the workspace were cross-checked against the official robocon.org.cn notice published on 2026-01-07."
+  },
+  "sources": [
+    {
+      "title": "Official notice",
+      "url": "https://robocon.org.cn/sys-nd/77.html"
+    },
+    {
+      "title": "Local appendix extracts",
+      "path": "_tmp_pdf_pages/page_02_readable.png .. page_06.png"
+    }
+  ],
+  "extents": {
+    "min_x": 0,
+    "min_y": 0,
+    "max_x": 12150,
+    "max_y": 12100
+  },
+  "view": {
+    "grid_step": 500,
+    "padding_px": 72,
+    "show_grid": true,
+    "show_axes": true,
+    "show_labels": false
+  },
+  "objects": [
+    {
+      "id": "display_origin",
+      "name": "Display Origin",
+      "type": "point",
+      "x": 6000,
+      "y": 12100,
+      "color": "#F59E0B",
+      "radius": 7,
+      "tags": ["origin", "axis"]
+    },
+    {
+      "id": "x_axis_marker",
+      "name": "X axis ref",
+      "type": "point",
+      "x": 6000,
+      "y": 10100,
+      "color": "#38BDF8",
+      "radius": 6,
+      "tags": ["axis"]
+    },
+    {
+      "id": "y_axis_marker",
+      "name": "Y axis ref",
+      "type": "point",
+      "x": 8000,
+      "y": 12100,
+      "color": "#38BDF8",
+      "radius": 6,
+      "tags": ["axis"]
+    },
+    {
+      "id": "field_boundary",
+      "name": "Field Boundary",
+      "type": "polygon",
+      "points": [[0, 0], [12150, 0], [12150, 12100], [0, 12100]],
+      "color": "#5B3A1A",
+      "fill": "#3B2A1E",
+      "width": 3,
+      "note": "Official outer size: 12150 x 12100 mm.",
+      "tags": ["field", "boundary"]
+    },
+    {
+      "id": "zone1_red",
+      "name": "Zone 1 (Red)",
+      "type": "polygon",
+      "points": [[50, 10050], [6050, 10050], [6050, 12050], [50, 12050]],
+      "color": "#FADCDA",
+      "fill": "#FADCDA",
+      "width": 1,
+      "tags": ["zone1", "red"]
+    },
+    {
+      "id": "zone1_blue",
+      "name": "Zone 1 (Blue)",
+      "type": "polygon",
+      "points": [[6100, 10050], [12100, 10050], [12100, 12050], [6100, 12050]],
+      "color": "#80C7E2",
+      "fill": "#80C7E2",
+      "width": 1,
+      "tags": ["zone1", "blue"]
+    },
+    {
+      "id": "zone2_red_passage",
+      "name": "Zone 2 Passage (Red)",
+      "type": "polygon",
+      "points": [[50, 2750], [6050, 2750], [6050, 10050], [50, 10050]],
+      "color": "#ECA297",
+      "fill": "#ECA297",
+      "width": 1,
+      "tags": ["zone2", "red", "passage"]
+    },
+    {
+      "id": "zone2_blue_passage",
+      "name": "Zone 2 Passage (Blue)",
+      "type": "polygon",
+      "points": [[6100, 2750], [12100, 2750], [12100, 10050], [6100, 10050]],
+      "color": "#75AFBF",
+      "fill": "#75AFBF",
+      "width": 1,
+      "tags": ["zone2", "blue", "passage"]
+    },
+    {
+      "id": "zone3_red",
+      "name": "Zone 3 (Red)",
+      "type": "polygon",
+      "points": [[50, 50], [6050, 50], [6050, 2750], [50, 2750]],
+      "color": "#FADCDA",
+      "fill": "#FADCDA",
+      "width": 1,
+      "note": "Zone 3 platform height is shown as 450 mm in the official section view.",
+      "tags": ["zone3", "red"]
+    },
+    {
+      "id": "zone3_blue",
+      "name": "Zone 3 (Blue)",
+      "type": "polygon",
+      "points": [[6100, 50], [12100, 50], [12100, 2750], [6100, 2750]],
+      "color": "#80C7E2",
+      "fill": "#80C7E2",
+      "width": 1,
+      "note": "Zone 3 platform height is shown as 450 mm in the official section view.",
+      "tags": ["zone3", "blue"]
+    },
+    {
+      "id": "center_split_strip",
+      "name": "Center Split 50mm",
+      "type": "polygon",
+      "points": [[6050, 50], [6100, 50], [6100, 12050], [6050, 12050]],
+      "color": "#F8FAFC",
+      "fill": "#F8FAFC",
+      "width": 1,
+      "tags": ["center", "split"]
+    },
+    {
+      "id": "start_zone_red",
+      "name": "Start Zone (Red)",
+      "type": "polygon",
+      "points": [[50, 11050], [1050, 11050], [1050, 12050], [50, 12050]],
+      "color": "#DF2222",
+      "fill": "#DF2222",
+      "width": 2,
+      "tags": ["start", "red"]
+    },
+    {
+      "id": "start_zone_blue",
+      "name": "Start Zone (Blue)",
+      "type": "polygon",
+      "points": [[11100, 11050], [12100, 11050], [12100, 12050], [11100, 12050]],
+      "color": "#3200FF",
+      "fill": "#3200FF",
+      "width": 2,
+      "tags": ["start", "blue"]
+    },
+    {
+      "id": "retry_zone_red",
+      "name": "Retry Zone (Red)",
+      "type": "polygon",
+      "points": [[50, 50], [1050, 50], [1050, 1250], [50, 1250]],
+      "color": "#DF2222",
+      "fill": "#DF2222",
+      "width": 2,
+      "tags": ["retry", "red"]
+    },
+    {
+      "id": "retry_zone_blue",
+      "name": "Retry Zone (Blue)",
+      "type": "polygon",
+      "points": [[11100, 50], [12100, 50], [12100, 1250], [11100, 1250]],
+      "color": "#3200FF",
+      "fill": "#3200FF",
+      "width": 2,
+      "tags": ["retry", "blue"]
+    },
+    {
+      "id": "used_weapon_red",
+      "name": "Used Weapon Area (Red)",
+      "type": "polygon",
+      "points": [[3550, 2050], [5050, 2050], [5050, 2350], [3550, 2350]],
+      "color": "#FFFF00",
+      "fill": "#FFFF00",
+      "width": 2,
+      "tags": ["used-weapon", "red"],
+      "approximate": true
+    },
+    {
+      "id": "used_weapon_blue",
+      "name": "Used Weapon Area (Blue)",
+      "type": "polygon",
+      "points": [[7100, 2050], [8600, 2050], [8600, 2350], [7100, 2350]],
+      "color": "#FFFF00",
+      "fill": "#FFFF00",
+      "width": 2,
+      "tags": ["used-weapon", "blue"],
+      "approximate": true
+    },
+    {
+      "id": "ramp_red",
+      "name": "Ramp (Red)",
+      "type": "polygon",
+      "points": [[50, 1250], [1550, 1250], [1550, 2750], [50, 2750]],
+      "color": "#C0BDB6",
+      "fill": "#C0BDB6",
+      "width": 2,
+      "tags": ["ramp", "red"],
+      "platform_height_mm": 450
+    },
+    {
+      "id": "ramp_blue",
+      "name": "Ramp (Blue)",
+      "type": "polygon",
+      "points": [[10600, 1250], [12100, 1250], [12100, 2750], [10600, 2750]],
+      "color": "#C0BDB6",
+      "fill": "#C0BDB6",
+      "width": 2,
+      "tags": ["ramp", "blue"],
+      "platform_height_mm": 450
+    },
+    {
+      "id": "long_pole_rack_red",
+      "name": "Long Pole Rack (Red)",
+      "type": "polygon",
+      "points": [[2250, 11750], [3050, 11750], [3050, 12050], [2250, 12050]],
+      "color": "#9B5F00",
+      "fill": "#9B5F00",
+      "width": 2,
+      "tags": ["rack", "red", "long-pole"],
+      "height_mm": 500
+    },
+    {
+      "id": "long_pole_rack_blue",
+      "name": "Long Pole Rack (Blue)",
+      "type": "polygon",
+      "points": [[9100, 11750], [9900, 11750], [9900, 12050], [9100, 12050]],
+      "color": "#9B5F00",
+      "fill": "#9B5F00",
+      "width": 2,
+      "tags": ["rack", "blue", "long-pole"],
+      "height_mm": 500
+    },
+    {
+      "id": "end_rack_center",
+      "name": "End Rack (Center)",
+      "type": "polygon",
+      "points": [[5925, 10500], [6225, 10500], [6225, 11700], [5925, 11700]],
+      "color": "#9B5F00",
+      "fill": "#9B5F00",
+      "width": 2,
+      "tags": ["rack", "center", "end"],
+      "approximate": true
+    },
+    {
+      "id": "zone3_center_support",
+      "name": "Zone 3 Center Support",
+      "type": "polygon",
+      "points": [[5915, 440], [6235, 440], [6235, 2060], [5915, 2060]],
+      "color": "#C0BDB6",
+      "fill": "#C0BDB6",
+      "width": 2,
+      "tags": ["zone3", "center", "support"],
+      "approximate": true
+    },
+    {
+      "id": "red_stump_r1_c1",
+      "name": "Red Stump R1C1 200mm",
+      "type": "polygon",
+      "points": [[1250, 4050], [2450, 4050], [2450, 5250], [1250, 5250]],
+      "color": "#295210",
+      "fill": "#295210",
+      "width": 2,
+      "tags": ["stump", "red", "h200"],
+      "height_mm": 200
+    },
+    {
+      "id": "red_stump_r1_c2",
+      "name": "Red Stump R1C2 400mm",
+      "type": "polygon",
+      "points": [[2450, 4050], [3650, 4050], [3650, 5250], [2450, 5250]],
+      "color": "#2A7138",
+      "fill": "#2A7138",
+      "width": 2,
+      "tags": ["stump", "red", "h400"],
+      "height_mm": 400
+    },
+    {
+      "id": "red_stump_r1_c3",
+      "name": "Red Stump R1C3 200mm",
+      "type": "polygon",
+      "points": [[3650, 4050], [4850, 4050], [4850, 5250], [3650, 5250]],
+      "color": "#295210",
+      "fill": "#295210",
+      "width": 2,
+      "tags": ["stump", "red", "h200"],
+      "height_mm": 200
+    },
+    {
+      "id": "red_stump_r2_c1",
+      "name": "Red Stump R2C1 400mm",
+      "type": "polygon",
+      "points": [[1250, 5250], [2450, 5250], [2450, 6450], [1250, 6450]],
+      "color": "#2A7138",
+      "fill": "#2A7138",
+      "width": 2,
+      "tags": ["stump", "red", "h400"],
+      "height_mm": 400
+    },
+    {
+      "id": "red_stump_r2_c2",
+      "name": "Red Stump R2C2 600mm",
+      "type": "polygon",
+      "points": [[2450, 5250], [3650, 5250], [3650, 6450], [2450, 6450]],
+      "color": "#98A650",
+      "fill": "#98A650",
+      "width": 2,
+      "tags": ["stump", "red", "h600"],
+      "height_mm": 600
+    },
+    {
+      "id": "red_stump_r2_c3",
+      "name": "Red Stump R2C3 400mm",
+      "type": "polygon",
+      "points": [[3650, 5250], [4850, 5250], [4850, 6450], [3650, 6450]],
+      "color": "#2A7138",
+      "fill": "#2A7138",
+      "width": 2,
+      "tags": ["stump", "red", "h400"],
+      "height_mm": 400
+    },
+    {
+      "id": "red_stump_r3_c1",
+      "name": "Red Stump R3C1 200mm",
+      "type": "polygon",
+      "points": [[1250, 6450], [2450, 6450], [2450, 7650], [1250, 7650]],
+      "color": "#295210",
+      "fill": "#295210",
+      "width": 2,
+      "tags": ["stump", "red", "h200"],
+      "height_mm": 200
+    },
+    {
+      "id": "red_stump_r3_c2",
+      "name": "Red Stump R3C2 400mm",
+      "type": "polygon",
+      "points": [[2450, 6450], [3650, 6450], [3650, 7650], [2450, 7650]],
+      "color": "#2A7138",
+      "fill": "#2A7138",
+      "width": 2,
+      "tags": ["stump", "red", "h400"],
+      "height_mm": 400
+    },
+    {
+      "id": "red_stump_r3_c3",
+      "name": "Red Stump R3C3 600mm",
+      "type": "polygon",
+      "points": [[3650, 6450], [4850, 6450], [4850, 7650], [3650, 7650]],
+      "color": "#98A650",
+      "fill": "#98A650",
+      "width": 2,
+      "tags": ["stump", "red", "h600"],
+      "height_mm": 600
+    },
+    {
+      "id": "red_stump_r4_c1",
+      "name": "Red Stump R4C1 400mm",
+      "type": "polygon",
+      "points": [[1250, 7650], [2450, 7650], [2450, 8850], [1250, 8850]],
+      "color": "#2A7138",
+      "fill": "#2A7138",
+      "width": 2,
+      "tags": ["stump", "red", "h400"],
+      "height_mm": 400
+    },
+    {
+      "id": "red_stump_r4_c2",
+      "name": "Red Stump R4C2 200mm",
+      "type": "polygon",
+      "points": [[2450, 7650], [3650, 7650], [3650, 8850], [2450, 8850]],
+      "color": "#295210",
+      "fill": "#295210",
+      "width": 2,
+      "tags": ["stump", "red", "h200"],
+      "height_mm": 200
+    },
+    {
+      "id": "red_stump_r4_c3",
+      "name": "Red Stump R4C3 400mm",
+      "type": "polygon",
+      "points": [[3650, 7650], [4850, 7650], [4850, 8850], [3650, 8850]],
+      "color": "#2A7138",
+      "fill": "#2A7138",
+      "width": 2,
+      "tags": ["stump", "red", "h400"],
+      "height_mm": 400
+    },
+    {
+      "id": "blue_stump_r1_c1",
+      "name": "Blue Stump R1C1 200mm",
+      "type": "polygon",
+      "points": [[7300, 4050], [8500, 4050], [8500, 5250], [7300, 5250]],
+      "color": "#295210",
+      "fill": "#295210",
+      "width": 2,
+      "tags": ["stump", "blue", "h200"],
+      "height_mm": 200
+    },
+    {
+      "id": "blue_stump_r1_c2",
+      "name": "Blue Stump R1C2 400mm",
+      "type": "polygon",
+      "points": [[8500, 4050], [9700, 4050], [9700, 5250], [8500, 5250]],
+      "color": "#2A7138",
+      "fill": "#2A7138",
+      "width": 2,
+      "tags": ["stump", "blue", "h400"],
+      "height_mm": 400
+    },
+    {
+      "id": "blue_stump_r1_c3",
+      "name": "Blue Stump R1C3 200mm",
+      "type": "polygon",
+      "points": [[9700, 4050], [10900, 4050], [10900, 5250], [9700, 5250]],
+      "color": "#295210",
+      "fill": "#295210",
+      "width": 2,
+      "tags": ["stump", "blue", "h200"],
+      "height_mm": 200
+    },
+    {
+      "id": "blue_stump_r2_c1",
+      "name": "Blue Stump R2C1 400mm",
+      "type": "polygon",
+      "points": [[7300, 5250], [8500, 5250], [8500, 6450], [7300, 6450]],
+      "color": "#2A7138",
+      "fill": "#2A7138",
+      "width": 2,
+      "tags": ["stump", "blue", "h400"],
+      "height_mm": 400
+    },
+    {
+      "id": "blue_stump_r2_c2",
+      "name": "Blue Stump R2C2 600mm",
+      "type": "polygon",
+      "points": [[8500, 5250], [9700, 5250], [9700, 6450], [8500, 6450]],
+      "color": "#98A650",
+      "fill": "#98A650",
+      "width": 2,
+      "tags": ["stump", "blue", "h600"],
+      "height_mm": 600
+    },
+    {
+      "id": "blue_stump_r2_c3",
+      "name": "Blue Stump R2C3 400mm",
+      "type": "polygon",
+      "points": [[9700, 5250], [10900, 5250], [10900, 6450], [9700, 6450]],
+      "color": "#2A7138",
+      "fill": "#2A7138",
+      "width": 2,
+      "tags": ["stump", "blue", "h400"],
+      "height_mm": 400
+    },
+    {
+      "id": "blue_stump_r3_c1",
+      "name": "Blue Stump R3C1 600mm",
+      "type": "polygon",
+      "points": [[7300, 6450], [8500, 6450], [8500, 7650], [7300, 7650]],
+      "color": "#98A650",
+      "fill": "#98A650",
+      "width": 2,
+      "tags": ["stump", "blue", "h600"],
+      "height_mm": 600
+    },
+    {
+      "id": "blue_stump_r3_c2",
+      "name": "Blue Stump R3C2 400mm",
+      "type": "polygon",
+      "points": [[8500, 6450], [9700, 6450], [9700, 7650], [8500, 7650]],
+      "color": "#2A7138",
+      "fill": "#2A7138",
+      "width": 2,
+      "tags": ["stump", "blue", "h400"],
+      "height_mm": 400
+    },
+    {
+      "id": "blue_stump_r3_c3",
+      "name": "Blue Stump R3C3 200mm",
+      "type": "polygon",
+      "points": [[9700, 6450], [10900, 6450], [10900, 7650], [9700, 7650]],
+      "color": "#295210",
+      "fill": "#295210",
+      "width": 2,
+      "tags": ["stump", "blue", "h200"],
+      "height_mm": 200
+    },
+    {
+      "id": "blue_stump_r4_c1",
+      "name": "Blue Stump R4C1 400mm",
+      "type": "polygon",
+      "points": [[7300, 7650], [8500, 7650], [8500, 8850], [7300, 8850]],
+      "color": "#2A7138",
+      "fill": "#2A7138",
+      "width": 2,
+      "tags": ["stump", "blue", "h400"],
+      "height_mm": 400
+    },
+    {
+      "id": "blue_stump_r4_c2",
+      "name": "Blue Stump R4C2 200mm",
+      "type": "polygon",
+      "points": [[8500, 7650], [9700, 7650], [9700, 8850], [8500, 8850]],
+      "color": "#295210",
+      "fill": "#295210",
+      "width": 2,
+      "tags": ["stump", "blue", "h200"],
+      "height_mm": 200
+    },
+    {
+      "id": "blue_stump_r4_c3",
+      "name": "Blue Stump R4C3 400mm",
+      "type": "polygon",
+      "points": [[9700, 7650], [10900, 7650], [10900, 8850], [9700, 8850]],
+      "color": "#2A7138",
+      "fill": "#2A7138",
+      "width": 2,
+      "tags": ["stump", "blue", "h400"],
+      "height_mm": 400
+    },
+    {
+      "id": "inner_floor_boundary",
+      "name": "Inner Floor Boundary",
+      "type": "line",
+      "points": [[50, 50], [12100, 50], [12100, 12050], [50, 12050], [50, 50]],
+      "color": "#9B5F00",
+      "width": 3,
+      "tags": ["boundary", "fence"]
+    },
+    {
+      "id": "zone_split_y_2750",
+      "name": "Zone 2/3 Split",
+      "type": "line",
+      "points": [[50, 2750], [12100, 2750]],
+      "color": "#475569",
+      "width": 2,
+      "tags": ["zone-split"]
+    },
+    {
+      "id": "zone_split_y_10050",
+      "name": "Zone 1/2 Split",
+      "type": "line",
+      "points": [[50, 10050], [12100, 10050]],
+      "color": "#475569",
+      "width": 2,
+      "tags": ["zone-split"]
+    },
+    {
+      "id": "center_line_x_6075",
+      "name": "Center Line",
+      "type": "line",
+      "points": [[6075, 0], [6075, 12100]],
+      "color": "#CBD5E1",
+      "width": 1,
+      "tags": ["axis", "center"]
+    }
+  ]
+}

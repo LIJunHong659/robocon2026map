@@ -1,0 +1,10 @@
+[project]
+name = "map-simulation"
+version = "0.1.0"
+description = "Robocon map parameter viewer"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.scripts]
+map-tool = "map_tool.viewer:main"
